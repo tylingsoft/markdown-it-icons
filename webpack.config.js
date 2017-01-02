@@ -28,7 +28,8 @@ const configurations = [
     },
     output: {
       path: path.join(__dirname, 'src'),
-      filename: '[name].bundle.js'
+      filename: '[name].bundle.js',
+      libraryTarget: 'commonjs2'
     },
     module: { loaders },
     target: 'node'
@@ -39,7 +40,8 @@ const configurations = [
     },
     output: {
       path: path.join(__dirname, 'test'),
-      filename: '[name].bundle.js'
+      filename: '[name].bundle.js',
+      libraryTarget: 'commonjs2'
     },
     module: { loaders },
     target: 'node'
