@@ -1,5 +1,6 @@
 import { rendererRule, coreRuler } from 'markdown-it-regex'
 import emoji from 'emojione/emoji.json'
+import faIconChars from 'font-awesome-icon-chars'
 
 const iconsPlugin = (md, name) => {
   let options = null
@@ -17,9 +18,14 @@ const iconsPlugin = (md, name) => {
       }
       break
     case 'font-awesome':
+      let faIcons = []
+      faIconChars.forEach((char) => {
+        faIcons = faIcons.concat(char.id).concat(char.aliases || [])
+      })
+      const faRegex = new RegExp(`(:fa-(?:${faIcons.join('|')}):)`)
       options = {
         name,
-        regex: /(:fa-[a-z0-9-]+?:)/,
+        regex: faRegex,
         replace: (match) => `<i class="fa ${match.slice(1, -1)}"></i>`
       }
       break
