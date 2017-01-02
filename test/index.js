@@ -15,7 +15,7 @@ assert(mdi.render('I :heart: :heart: :heart: you').trim() === '<p>I <i class="e1
 
 assert(mdi.render('A :fa-car: runs').trim() === '<p>A <i class="fa fa-car"></i> runs</p>', 'A :fa-car: runs')
 
-assert(mdi.render(':does_not_exist:').trim() === ':does_not_exist:', ':does_not_exist:')
+assert(mdi.render(':does_not_exist:').trim() === '<p>:does_not_exist:</p>', ':does_not_exist:')
 
 console.log(mdi.render('I :heart: you'))
 console.log(mdi.render('A :fa-car: runs'))

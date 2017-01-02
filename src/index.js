@@ -1,12 +1,18 @@
 import { rendererRule, coreRuler } from 'markdown-it-regex'
+import emoji from 'emojione/emoji.json'
 
 const iconsPlugin = (md, name) => {
   let options = null
   switch (name) {
     case 'emoji':
+      let emojis = []
+      Object.keys(emoji).forEach((name) => {
+        emojis = emojis.concat(name).concat(emoji[name].aliases.map((item) => item.slice(1, -1)))
+      })
+      const emojiRegex = new RegExp(`(:(?:${emojis.join('|').replace(/\+/g, '\\+')}):)`)
       options = {
         name,
-        regex: /(:[a-z0-9_]+?:)/,
+        regex: emojiRegex,
         replace: (match) => `<i class="e1a-${match.slice(1, -1)}"></i>`
       }
       break
