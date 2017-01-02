@@ -21,3 +21,18 @@ mdi.use(markdownItIcons, 'font-awesome')
 mdi.render('I :heart: you') // <p>I <i class="e1a-heart"></i> you</p>
 mdi.render('A :fa-car: runs') // <p>A <i class="fa fa-car"></i> runs</p>
 ```
+
+
+## Development
+
+### Build
+
+```
+yarn run build
+```
+
+### Test
+
+```
+yarn test
+```
