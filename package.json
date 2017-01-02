@@ -20,5 +20,8 @@
     "npm-check-updates": "^2.8.9",
     "standard": "^8.6.0",
     "webpack": "^1.14.0"
+  },
+  "dependencies": {
+    "markdown-it-regex": "^0.1.4"
   }
 }
