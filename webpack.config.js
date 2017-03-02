@@ -1,51 +1,34 @@
-const path = require('path')
+const nodeExternals = require('webpack-node-externals')
 
-const loaders = [
-  {
-    test: /\.json$/,
-    loader: 'json-loader'
+const config = {
+  target: 'node',
+  externals: [nodeExternals()],
+  entry: {
+    'src/index': './src/index.js',
+    'test/index': './test/index.js'
   },
-  {
-    test: /\.js$/,
-    loader: 'babel-loader',
-    exclude: /node_modules/,
-    query: {
-      presets: [
-        ['env', {
-          'targets': {
-            'node': 'current'
-          }
-        }]
-      ]
-    }
-  }
-]
-
-const configurations = [
-  {
-    entry: {
-      'index': './src/index.js'
-    },
-    output: {
-      path: path.join(__dirname, 'src'),
-      filename: '[name].bundle.js',
-      libraryTarget: 'commonjs2'
-    },
-    module: { loaders },
-    target: 'node'
+  output: {
+    path: '.',
+    filename: '[name].bundle.js',
+    libraryTarget: 'commonjs2'
   },
-  {
-    entry: {
-      'index': './test/index.js'
-    },
-    output: {
-      path: path.join(__dirname, 'test'),
-      filename: '[name].bundle.js',
-      libraryTarget: 'commonjs2'
-    },
-    module: { loaders },
-    target: 'node'
+  module: {
+    rules: [{
+      test: /\.js$/,
+      use: {
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            ['env', {
+              'targets': {
+                'node': 'current'
+              }
+            }]
+          ]
+        }
+      }
+    }]
   }
-]
+}
 
-module.exports = configurations
+export default [config]
