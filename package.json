@@ -6,7 +6,7 @@
   "scripts": {
     "build": "node -r babel-register node_modules/.bin/webpack --progress --colors --watch",
     "test": "node test/index.bundle.js",
-    "upgrade": "ncu -ua && yarn upgrade"
+    "upgrade": "ncu -ua && yarn upgrade && cp node_modules/emojione/assets/css/emojione-awesome.css src/ && sed -i '' 's%//cdn.jsdelivr.net/%https://cdn.jsdelivr.net/%g' src/emojione-awesome.css"
   },
   "repository": "git@github.com:tylingsoft/markdown-it-icons.git",
   "author": "Tyler Long <tyler4long@gmail.com>",
