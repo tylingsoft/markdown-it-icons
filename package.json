@@ -1,10 +1,10 @@
 {
   "name": "markdown-it-icons",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "Plugin for markdown-it, supports emoji icons and font-awesome icons.",
   "main": "src/index.js",
   "scripts": {
-    "build": "cp node_modules/emojione/assets/css/emojione-awesome.css src/ && sed -i '' 's%//cdn.jsdelivr.net/%https://cdn.jsdelivr.net/%g' src/emojione-awesome.css && cp node_modules/font-awesome/css/font-awesome.css src/ && sed -i '' 's%../fonts/%https://cdn.jsdelivr.net/fontawesome/4.7.0/fonts/%g' src/font-awesome.css",
+    "build": "cp node_modules/emojione/assets/css/emojione-awesome.css src/ && sed -i '' 's%//cdn.jsdelivr.net/%https://cdn.jsdelivr.net/%g' src/emojione-awesome.css && cp node_modules/font-awesome/css/font-awesome.css src/ && sed -i '' 's%../fonts/%https://cdn.jsdelivr.net/fontawesome/latest/fonts/%g' src/font-awesome.css",
     "test": "node -r babel-register -r ignore-styles test/index.js",
     "upgrade": "ncu -ua && yarn upgrade"
   },
