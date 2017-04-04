@@ -1,10 +1,14 @@
 import path from 'path'
 import nodeExternals from 'webpack-node-externals'
+import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
 const rules = [
   {
     test: /\.css$/,
-    use: { loader: 'ignore-loader' }
+    use: ExtractTextPlugin.extract({
+      fallback: 'style-loader',
+      use: 'css-loader'
+    })
   },
   {
     test: /\.js$/,
@@ -23,7 +27,7 @@ const rules = [
   }
 ]
 
-const nodeConfig = {
+const config = {
   target: 'node',
   externals: [nodeExternals()],
   entry: {
@@ -34,7 +38,10 @@ const nodeConfig = {
     filename: '[name].bundle.js',
     libraryTarget: 'commonjs2'
   },
-  module: { rules }
+  module: { rules },
+  plugins: [
+    new ExtractTextPlugin('[name].bundle.css')
+  ]
 }
 
-export default [nodeConfig]
+export default [config]
