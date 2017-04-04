@@ -1,3 +1,6 @@
+import './emojione-awesome.css'
+import './font-awesome.css'
+
 import { rendererRule, coreRuler } from 'markdown-it-regex'
 import emoji from 'emojione/emoji.json'
 import faIconChars from 'font-awesome-icon-chars'

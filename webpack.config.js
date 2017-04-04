@@ -13,21 +13,27 @@ const config = {
     libraryTarget: 'commonjs2'
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      use: {
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            ['env', {
-              'targets': {
-                'node': 'current'
-              }
-            }]
-          ]
+    rules: [
+      {
+        test: /\.css$/,
+        use: { loader: 'ignore-loader' }
+      },
+      {
+        test: /\.js$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['env', {
+                'targets': {
+                  'node': 'current'
+                }
+              }]
+            ]
+          }
         }
       }
-    }]
+    ]
   }
 }
 
