@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-icons",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Plugin for markdown-it, supports emoji icons and font-awesome icons.",
   "main": "src/index.bundle.js",
   "scripts": {
