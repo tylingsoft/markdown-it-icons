@@ -1,10 +1,10 @@
 {
   "name": "markdown-it-icons",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Plugin for markdown-it, supports emoji icons and font-awesome icons.",
   "main": "src/index.bundle.js",
   "scripts": {
-    "build": "node -r babel-register ./node_modules/.bin/webpack --progress --colors && cp node_modules/emojione/assets/css/emojione-awesome.css src/ && sed -i '' 's%//cdn.jsdelivr.net/%https://cdn.jsdelivr.net/%g' src/emojione-awesome.css && cp node_modules/font-awesome/css/font-awesome.css src/ && sed -i '' 's%../fonts/%https://cdn.jsdelivr.net/fontawesome/latest/fonts/%g' src/font-awesome.css",
+    "build": "node -r babel-register ./node_modules/.bin/webpack --progress --colors && cp node_modules/emojione/assets/css/emojione-awesome.css src/ && sed -i '' 's%//cdn.jsdelivr.net/emojione/assets/svg/%https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/%g' src/emojione-awesome.css && cp node_modules/font-awesome/css/font-awesome.css src/ && sed -i '' 's%../fonts/%https://cdn.jsdelivr.net/fontawesome/latest/fonts/%g' src/font-awesome.css",
     "test": "node -r babel-register test/index.js",
     "upgrade": "ncu -ua && yarn upgrade"
   },
