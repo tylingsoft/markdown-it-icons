@@ -28,7 +28,7 @@ mdi.render('A :fa-car: runs') // <p>A <i class="fa fa-car"></i> runs</p>
 ### Build
 
 ```
-yarn run build
+yarn build
 ```
 
 ### Test
