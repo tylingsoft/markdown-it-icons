@@ -1,10 +1,10 @@
 {
   "name": "markdown-it-icons",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Plugin for markdown-it, supports emoji icons and font-awesome icons.",
-  "main": "src/index.bundle.js",
+  "main": "src/index.js",
   "scripts": {
-    "build": "cp node_modules/emojione/assets/css/emojione-awesome.css src/ && sed -i '' 's%//cdn.jsdelivr.net/emojione/assets/svg/%https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/svg/%g' src/emojione-awesome.css && cp node_modules/font-awesome/css/font-awesome.css src/ && sed -i '' 's%../fonts/%https://cdn.jsdelivr.net/fontawesome/latest/fonts/%g' src/font-awesome.css",
+    "build": "cp node_modules/emojione/assets/css/emojione-awesome.css src/ && sed -i '' 's%//cdn.jsdelivr.net/emojione/assets/svg/%https://cdn.jsdelivr.net/emojione/assets/svg/%g' src/emojione-awesome.css && cp node_modules/font-awesome/css/font-awesome.css src/ && sed -i '' 's%../fonts/%https://cdn.jsdelivr.net/fontawesome/latest/fonts/%g' src/font-awesome.css",
     "test": "node -r babel-register -r ignore-styles test/index.js",
     "upgrade": "ncu -ua && yarn upgrade"
   },
@@ -12,13 +12,13 @@
   "author": "Tyler Long <tyler4long@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "babel-preset-env": "^1.1.11",
+    "babel-preset-env": "^1.3.2",
     "babel-register": "^6.24.0",
     "font-awesome": "^4.7.0",
     "ignore-styles": "^5.0.1",
-    "markdown-it": "^8.3.0",
-    "npm-check-updates": "^2.10.3",
-    "standard": "^9.0.0"
+    "markdown-it": "^8.3.1",
+    "npm-check-updates": "^2.10.5",
+    "standard": "^10.0.1"
   },
   "dependencies": {
     "emojione": "^2.2.7",
