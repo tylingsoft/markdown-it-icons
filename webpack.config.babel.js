@@ -7,7 +7,7 @@ const config = {
   entry: {
     index: './src/index.js'
   },
-  externals: [nodeExternals()],
+  externals: [nodeExternals({ whitelist: [/\.css$/] })],
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',

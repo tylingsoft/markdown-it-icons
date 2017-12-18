@@ -1,4 +1,4 @@
-import './emojione-awesome.css'
+import 'emojione/extras/css/emojione-awesome.css'
 import './font-awesome.css'
 
 import { rendererRule, coreRuler } from 'markdown-it-regex'
