@@ -1,6 +1,6 @@
 import assert from 'assert'
 import markdownIt from 'markdown-it'
-import markdownItIcons from '../src/index'
+import markdownItIcons from '../dist/index'
 
 const mdi = markdownIt()
 mdi.use(markdownItIcons, 'emoji')
