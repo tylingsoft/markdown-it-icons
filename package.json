@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --progress --color",
+    "build:watch": "yarn build --watch",
     "test": "node -r babel-register test/index.js",
     "upgrade": "yarn-upgrade-all && cp node_modules/emojione/assets/css/emojione-awesome.css src/ && sed -i '' 's%//cdn.jsdelivr.net/emojione/assets/svg/%https://cdn.jsdelivr.net/emojione/assets/svg/%g' src/emojione-awesome.css && cp node_modules/font-awesome/css/font-awesome.css src/ && sed -i '' 's%../fonts/%https://cdn.jsdelivr.net/fontawesome/latest/fonts/%g' src/font-awesome.css"
   },
