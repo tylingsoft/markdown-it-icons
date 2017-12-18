@@ -49,5 +49,11 @@ yarn build:watch
 yarn test
 ```
 
+### Distribution
+
+```
+yarn release && npm publish
+```
+
 
 ## Todo

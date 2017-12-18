@@ -1,11 +1,12 @@
 {
   "name": "markdown-it-icons",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Plugin for markdown-it, supports emoji icons and font-awesome icons.",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --progress --color",
     "build:watch": "yarn build --watch",
+    "release": "yarn build -p",
     "test": "node -r babel-register test/index.js",
     "upgrade": "yarn-upgrade-all && cp node_modules/font-awesome/css/font-awesome.css src/ && sed -i '' 's%../fonts/%https://cdn.jsdelivr.net/fontawesome/latest/fonts/%g' src/font-awesome.css"
   },
