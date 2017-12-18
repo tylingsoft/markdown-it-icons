@@ -10,8 +10,8 @@ const iconsPlugin = (md, name) => {
   switch (name) {
     case 'emoji':
       let emojis = []
-      Object.keys(emoji).forEach((name) => {
-        emojis = emojis.concat(name).concat(emoji[name].aliases.map((item) => item.slice(1, -1)))
+      Object.keys(emoji).forEach((key) => {
+        emojis = emojis.concat(emoji[key].shortname.slice(1, -1)).concat(emoji[key].shortname_alternates.map((item) => item.slice(1, -1)))
       })
       const emojiRegex = new RegExp(`(:(?:${emojis.join('|').replace(/\+/g, '\\+')}):)`)
       options = {
